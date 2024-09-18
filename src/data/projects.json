@@ -1,0 +1,35 @@
+[
+  {
+    "_id": "64e08ea53eba4adba8feb49d",
+    "articlelink": "",
+    "demolink": "https://memory-game-v8iu.vercel.app/",
+    "disc": "A fun javascript game",
+    "name": "Memory Game",
+    "number": 1,
+    "sourcelink": "https://github.com/doe-base/memory-game",
+    "tech": "Javascript",
+    "year": "2022"
+  },
+  {
+    "_id": "66e78dcb1f42ce44d04c188f",
+    "articlelink": "",
+    "demolink": "",
+    "disc": "An interactive bank app with secure login and a modern interface, built using Next.js and Go.",
+    "name": "Bank Application",
+    "number": 2,
+    "sourcelink": "https://github.com/doe-base/bank-application",
+    "tech": "Go,Next js",
+    "year": "2024"
+  },
+  {
+    "_id": "66e792041f42ce44d04c1892",
+    "articlelink": "",
+    "demolink": "https://netflix-clone-self-iota.vercel.app",
+    "disc": "I build the good old netflix clone to flex   my Firebase and \n\nReact skills",
+    "name": "Netflix Clone",
+    "number": 4,
+    "sourcelink": "https://github.com/doe-base/Netflix-clone",
+    "tech": "Firebase,React",
+    "year": "2022"
+  }
+]
