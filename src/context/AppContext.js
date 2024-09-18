@@ -8,7 +8,7 @@ const AppProvider = ({ children }) => {
     const [ Blogs, setBlogs ] = useState(BlogsData);
     const [Blogsloading, setBlogsloading] = useState(false);
     const [ isNavOpen, setIsNavOpen ] = useState(true);
-    const [ DarkMode, setDarkMode ] = useState(JSON.parse(localStorage.getItem('mode')));
+    const [ DarkMode, setDarkMode ] = useState(JSON.parse(localStorage.getItem('mode')) || true);
 
 
 
