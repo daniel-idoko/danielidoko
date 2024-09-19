@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React, { useContext, useState, useEffect } from 'react';
 import BlogsData from "../data/blogs.json"
 
@@ -8,8 +7,13 @@ const AppProvider = ({ children }) => {
     const [ Blogs, setBlogs ] = useState(BlogsData);
     const [Blogsloading, setBlogsloading] = useState(false);
     const [ isNavOpen, setIsNavOpen ] = useState(false);
-    const [ DarkMode, setDarkMode ] = useState(JSON.parse(localStorage.getItem('mode')) || true);
+    const [ DarkMode, setDarkMode ] = useState(JSON.parse(localStorage.getItem('mode')));
 
+    useEffect(()=> {
+        if(DarkMode === null){
+            setDarkMode(true);
+        }
+    })
 
 
     useEffect(()=>{
