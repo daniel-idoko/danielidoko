@@ -120,6 +120,10 @@ const SmallSidebar = ({ toggleMode }) => {
     const classes = useStyles({ DarkMode });
     const [currentPath, setCurrentPath] = useState(window.location.pathname);
 
+    const toGithub =()=>{
+      window.open('https://github.com/doe-base', '_blank')
+    }
+
   return (
     <div
       className={`${
@@ -148,7 +152,7 @@ const SmallSidebar = ({ toggleMode }) => {
           </div> */}
 
           <div className={classes.btnsHolder}>
-            <Button variant="contained">Github <FaGithubAlt style={{paddingLeft: '3px'}}/></Button>
+            <Button variant="contained" onClick={toGithub}>Github <FaGithubAlt style={{paddingLeft: '3px'}}/></Button>
             {/* <Button variant="outlined">Download CV</Button> */}
           </div>
         </section>
