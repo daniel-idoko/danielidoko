@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme)=>{
             margin: '1.4rem 1rem !important',
 
             [theme.breakpoints.down('sm')]: {
-                margin: '1rem 0rem !important',
+                margin: '1rem 0.5rem !important',
             },
 
             '&:hover $title': {

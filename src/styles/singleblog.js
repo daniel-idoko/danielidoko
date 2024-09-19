@@ -6,12 +6,12 @@ const useStyles = makeStyles((theme) => {
         width: "100%",
         height: "100%",
         padding: '3rem',
-
+        
         [theme.breakpoints.down('lg')]: {
           padding: '2rem',
         },
         [theme.breakpoints.down('sm')]: {
-          padding: '1.5rem',
+          padding: '1rem',
         }
       },
       label: {
@@ -62,7 +62,12 @@ const useStyles = makeStyles((theme) => {
           fontWeight: "600",
           fontFamily: "Lora, Arial, serif",
           fontSize: "2.5rem",
-          marginBottom: "3rem"
+          marginBottom: "3rem",
+
+          [theme.breakpoints.down('sm')]: {
+            marginBottom: "0rem",
+            fontSize: "1.7rem",
+          }
       },
       BlogBannerImg: {
           width: "100%",
@@ -141,7 +146,9 @@ const useStyles = makeStyles((theme) => {
           color: "#fff"
       },
       infosHolder: {
+        width: '100%',
         display: 'flex',
+        flexWrap: 'wrap',
         marginBottom: '0.5rem',
         color: ({DarkMode})=>{
             if(DarkMode){
@@ -150,14 +157,29 @@ const useStyles = makeStyles((theme) => {
               return "#686868 !important"
             }
           },
+          [theme.breakpoints.down('sm')]: {
+            justifyContent: 'space-between',
+          }
       },
       infoCard: {
         display: 'flex',
         alignItems: 'center',
-        marginRight: '1rem'
+        marginRight: '1rem',
+
+        [theme.breakpoints.down('sm')]: {
+          marginRight: '0rem',
+        }
       },
       titleSection: {
-        marginTop: '3.2rem'
+        width: '100%',
+        marginTop: '3.2rem',
+
+        [theme.breakpoints.down('md')]: {
+          marginTop: '2rem !important',
+        },
+        [theme.breakpoints.down('sm')]: {
+          marginTop: '1.6rem !important',
+        }
       },
       icon:{
         marginRight: '0.2rem',
