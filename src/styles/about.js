@@ -12,15 +12,27 @@ const useStyles = makeStyles((theme) => {
         //       return "default"
         //   }
         // },
+
+        [theme.breakpoints.down('sm')]: {
+          padding: "2rem 1rem !important",
+        }
       },
       test2: {
         padding: "2rem 1.5rem !important",
         backgroundImage: "url(/img/me.jpeg)",
-        backgroundSize: "cover",
         backgroundPosition: "center center",
+        backgroundSize: 'cover',
+        backgroundRepeat: "no-repeat",
     
         [theme.breakpoints.down('md')]: {
           height: "20rem !important",
+          backgroundPosition: "center 20%",
+        },
+        [theme.breakpoints.down('sm')]: {
+          padding: "1rem 1rem !important",
+          height: "10rem !important",
+          backgroundPosition: "center 20%",
+
         }
       },
       label: {
@@ -44,7 +56,7 @@ const useStyles = makeStyles((theme) => {
       },
       name: {
         fontFamily: "Lora, Arial, serif",
-        fontSize: "1.2rem",
+        fontSize: "1rem",
         fontWeight: "normal",
         fontStyle: "italic",
         lineHeight: "1.5",
@@ -55,7 +67,7 @@ const useStyles = makeStyles((theme) => {
           }else{
             return "#fff"
           }
-        }
+        },
       },
       root: {
         width: "100%",
@@ -136,6 +148,9 @@ const useStyles = makeStyles((theme) => {
           }else{
             return "#000"
           }
+        },
+        [theme.breakpoints.down('sm')]: {
+          fontSize: '1.6rem',
         }
       },
       h2Title: {

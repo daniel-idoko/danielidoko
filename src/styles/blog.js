@@ -13,16 +13,22 @@ const useStyles = makeStyles((theme) => {
           padding: '2rem',
         },
         [theme.breakpoints.down('sm')]: {
-          padding: '1.5rem',
+          padding: '1rem',
         }
       },
       section:{
         width: '100%',
-        marginBottom: '6rem'
+        marginBottom: '6rem',
+
+        [theme.breakpoints.down('sm')]: {
+          marginBottom: '3rem',
+          marginTop: '2.5rem',
+        }
       },
       label: {
         display: 'flex',
         alignItems: 'center',
+        marginBottom: '2rem',
 
         [theme.breakpoints.up('md')]: {
           display: 'none'
@@ -40,7 +46,7 @@ const useStyles = makeStyles((theme) => {
       },
       name: {
         fontFamily: "Lora, Arial, serif",
-        fontSize: "1.2rem",
+        fontSize: "1rem",
         fontWeight: "normal",
         fontStyle: "italic",
         lineHeight: "1.5",
@@ -62,9 +68,14 @@ const useStyles = makeStyles((theme) => {
             }
         },
         marginBottom: '2rem',
-        fontSize: '2.2rem',
+        fontSize: '2rem',
         fontWeight: '900',
-        letterSpacing:'1px'
+        letterSpacing:'1px',
+
+        [theme.breakpoints.down('sm')]: {
+          fontSize: '1.5rem',
+          marginBottom: '1.4rem',
+        }
       },
 
       blogCard: {
@@ -99,6 +110,9 @@ const useStyles = makeStyles((theme) => {
                 return "#686868"
             }
         },
+        [theme.breakpoints.down('sm')]: {
+          fontSize: '1rem',
+        }
       },
       dateText: {
         color: ({ DarkMode })=>{
@@ -111,7 +125,7 @@ const useStyles = makeStyles((theme) => {
         fontSize: '.9rem',
         fontWeight: '500',
 
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.down('sm')]: {
           display: 'none !important'
         }
       },

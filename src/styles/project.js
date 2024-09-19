@@ -18,7 +18,11 @@ const useStyles = makeStyles((theme) => {
       },
       section:{
         width: '100%',
-        marginBottom: '4rem'
+        marginBottom: '4rem',
+
+        [theme.breakpoints.down('sm')]: {
+          marginTop: '2.5rem',
+        }
       },
       label: {
         display: 'flex',
@@ -41,7 +45,7 @@ const useStyles = makeStyles((theme) => {
       },
       name: {
         fontFamily: "Lora, Arial, serif",
-        fontSize: "1.2rem",
+        fontSize: "1rem",
         fontWeight: "normal",
         fontStyle: "italic",
         lineHeight: "1.5",
@@ -86,6 +90,10 @@ const useStyles = makeStyles((theme) => {
             }
         },
         borderRadius: '6px',
+        [theme.breakpoints.down('sm')]: {
+          padding: '1rem',
+          margin: '1rem 0.25rem',
+        }
       },
       firstPart: {
         width: '100%',

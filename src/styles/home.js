@@ -9,6 +9,10 @@ const useStyles = makeStyles((theme) => {
       test2: {
         width: '100%',
         padding: "4rem 2.5rem !important",
+
+        [theme.breakpoints.down('sm')]: {
+          padding: "2rem 1rem !important",
+        }
       },
       root: {
         width: "100%",
@@ -70,7 +74,7 @@ const useStyles = makeStyles((theme) => {
       },
       title: {
         fontFamily: "Lora, Arial, serif",
-        fontSize: "1.2rem",
+        fontSize: "1rem",
         fontWeight: "normal",
         fontStyle: "italic",
         lineHeight: "1.5",
@@ -292,7 +296,11 @@ const useStyles = makeStyles((theme) => {
         color: '#999',
         fontSize: '1.7rem',
         marginBottom: '3rem',
-        fontWeight: '550'
+        fontWeight: '550',
+
+        [theme.breakpoints.down('sm')]: {
+          fontSize: '1.3rem',
+        }
       },
       searchTermTextSpan: {
         color: ({DarkMode})=>{

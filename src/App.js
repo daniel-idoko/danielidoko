@@ -16,6 +16,7 @@ import "./css/dracula.css";
 
 const theme = createTheme({
   palette: {
+    mode: 'light',
     primary:{
       main: 'rgb(30, 175, 237)',
     },
@@ -58,7 +59,7 @@ function App() {
             <Route path="/learn" element={<BlogPage DarkMode={DarkMode} />}/>
             <Route path="/projects" element={<ProjectPage DarkMode={DarkMode} />}/>
             <Route path="/about" element={<About DarkMode={DarkMode}/>} />
-            <Route path="/reach_out" element={<Contact DarkMode={DarkMode}/>} />
+            <Route path="/reach-out" element={<Contact DarkMode={DarkMode}/>} />
             <Route path="*" element={<Page404 DarkMode={DarkMode}/>} />
           </Routes>
         </Layout>

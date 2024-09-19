@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaTimes } from 'react-icons/fa';
 import { useGlobalContext } from '../context/AppContext';
 import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
 import { makeStyles } from '@mui/styles';
 import { Button } from '@mui/material';
+import { FaGithubAlt } from 'react-icons/fa';
 
 
 const useStyles = makeStyles((theme)=>{
@@ -11,7 +12,7 @@ const useStyles = makeStyles((theme)=>{
 
         sidebar: {
             width: '90vw',
-            height: '95vh',
+            height: '90vh',
             maxWidth: '620px',
             background: ({ DarkMode })=>{
                 if(DarkMode){
@@ -24,6 +25,9 @@ const useStyles = makeStyles((theme)=>{
             boxShadow: '0 5px 15px rgba(0, 0, 0, 0.2)',
             position: 'relative',
             padding: '4rem 2rem',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
         },
 
         lightSwitch:{
@@ -96,7 +100,7 @@ const useStyles = makeStyles((theme)=>{
       },
 
         copyRight: {
-          display: 'block',
+          fontSize: '0.9rem',
           color: ({ DarkMode })=>{
             if(DarkMode){
                 return "#bbbbbb"
@@ -104,9 +108,6 @@ const useStyles = makeStyles((theme)=>{
                 return "#686868"
             }
         },
-        position: 'absolute',
-        bottom: '1rem',
-        left: '25%'
       }
     }
 });
@@ -117,6 +118,7 @@ const SmallSidebar = ({ toggleMode }) => {
 
     const { Blogs, DarkMode, setDarkMode, isNavOpen, setIsNavOpen } = useGlobalContext();
     const classes = useStyles({ DarkMode });
+    const [currentPath, setCurrentPath] = useState(window.location.pathname);
 
   return (
     <div
@@ -125,32 +127,36 @@ const SmallSidebar = ({ toggleMode }) => {
       }`}
     >
       <aside className={classes.sidebar}>
+        <section>
 
-        <div className={classes.lightSwitch} onClick={toggleMode}><TipsAndUpdatesIcon style={{fontSize: '1.1rem'}}/></div>
+          <div className={classes.lightSwitch} onClick={toggleMode}><TipsAndUpdatesIcon style={{fontSize: '1.1rem'}}/></div>
 
-        <button className='close-btn' onClick={()=> setIsNavOpen(false)}>
-          <FaTimes />
-        </button>
+          <button className='close-btn' onClick={()=> setIsNavOpen(false)}>
+            <FaTimes />
+          </button>
 
-        <div className={classes.sidebarLinks}>
-          <a  href='/' className={classes.link}>Home</a>
-          <a href='/learn' className={classes.link}>Blogs</a>
-          <a href='/projects' className={classes.link}>Projects</a>
-          <a href='/about' className={classes.link}>About me</a>
-          <a href='/reach_out' className={classes.link}>Reach out</a>
+          <div className={classes.sidebarLinks}>
+            <a  href='/' className={classes.link} style={currentPath == "/" ? {color: 'rgb(30, 175, 237)'} : null}>Home</a>
+            <a href='/learn' className={classes.link} style={currentPath == "/learn" ? {color: 'rgb(30, 175, 237)'} : null}>Blogs</a>
+            <a href='/projects' className={classes.link} style={currentPath == "/projects" ? {color: 'rgb(30, 175, 237)'} : null}>Projects</a>
+            <a href='/about' className={classes.link} style={currentPath == "/about" ? {color: 'rgb(30, 175, 237)'} : null}>About me</a>
+            <a href='/reach-out' className={classes.link} style={currentPath == "/reach-out" ? {color: 'rgb(30, 175, 237)'} : null}>Reach out</a>
+          </div>
+
+          {/* <div className={classes.aboutMeText}>
+              <p className={classes.bioText}>Hey, I'm <a href="/about" className="namelogoLink" style={{backgroundImage: "url(/img/bg11.jpg"}}>Daniel Idoko</a>. <br/> I'm a Software Developer in Abuja Nigeria. Welcome to my website where I post blogs about topic that intrest me and share source code to my project. </p>
+          </div> */}
+
+          <div className={classes.btnsHolder}>
+            <Button variant="contained">Github <FaGithubAlt style={{paddingLeft: '3px'}}/></Button>
+            {/* <Button variant="outlined">Download CV</Button> */}
+          </div>
+        </section>
+
+        <div>
+          <p className={classes.copyRight}>&copy; 2023 Daniel Idoko. All Rights Reserved.</p>
         </div>
-
-        <div className={classes.aboutMeText}>
-            <p className={classes.bioText}>Hey, I'm <a href="/about" className="namelogoLink" style={{backgroundImage: "url(/img/bg11.jpg"}}>Daniel Idoko</a>. <br/> I'm a Software Developer in Abuja Nigeria. Welcome to my website where I post blogs about topic that intrest me and share source code to my project. </p>
-        </div>
-
-        <div className={classes.btnsHolder}>
-          <Button variant="outlined">Github PG</Button>
-          <Button variant="contained">Download CV</Button>
-        </div>
-
         
-        <p className={classes.copyRight}>&copy; 2023 Daniel Idoko. All Rights Reserved.</p>
         
       </aside>
     </div>

@@ -11,7 +11,10 @@ const useStyles = makeStyles((theme)=>{
         card: {
             display: "flex",
             width: "100%",
-            marginBottom: "5rem !important"
+            marginBottom: "5rem !important",
+            [theme.breakpoints.down('sm')]: {
+                marginBottom: "3rem !important",
+            },
         },
         cardImg: {
             display: "block",
@@ -24,11 +27,12 @@ const useStyles = makeStyles((theme)=>{
             backgroundImage: ({img})=>{
                 return `url(${img})`
             },
-            [theme.breakpoints.down('sm')]: {
-                display: 'none'
-            },
+  
             [theme.breakpoints.down('lg')]: {
                 marginBottom: '1rem'
+            },
+            [theme.breakpoints.down('sm')]: {
+                display: 'none'
             },
         },
         cardTitle: {
@@ -54,7 +58,16 @@ const useStyles = makeStyles((theme)=>{
                     return "#000000"
                   }
                 },
+              },
+
+              [theme.breakpoints.down('sm')]: {
+                fontSize: '1.6rem',
               }
+        },
+        minRead: {
+            [theme.breakpoints.down('sm')]: {
+                display: 'none'
+            }
         },
         cardTextarea: {
             textAlign: "left",
@@ -73,6 +86,7 @@ const useStyles = makeStyles((theme)=>{
         },
         cardInfoHolder: {
             display: "flex",
+            flexWrap: 'wrap',
             alignItems: "center",
             marginBottom: '1rem'
         },
@@ -82,7 +96,7 @@ const useStyles = makeStyles((theme)=>{
         },
         cardInfoTextJavascipt: {
             color: "#afaf17bb !important",
-
+            whiteSpace: 'nowrap'
         },
         cardP: {
             fontSize: "1rem",
@@ -91,7 +105,12 @@ const useStyles = makeStyles((theme)=>{
             lineBreakMode: "1.4",
             lineHeight: "1.4",
             color: "#868686",
-            marginBottom: "1.5rem"
+            marginBottom: "1.5rem",
+
+            [theme.breakpoints.down('sm')]: {
+                marginBottom: "0.5rem !important",
+            },
+            
         },
         cardLink: {
             color: "rgb(30, 175, 237) !important",
@@ -118,7 +137,7 @@ export default function Blogcard({_id, DarkMode, img, title, smallbody, readdura
                     <div className={classes.cardInfoHolder}>
                         <div className={classes.cardInfo}><CalendarMonthIcon className={classes.cardInfoIcon}/> <p className={classes.cardInfoText}>{date}</p></div>
                         <div className={classes.cardInfo}><FolderOutlinedIcon className={classes.cardInfoIcon}/> <p className={classes.cardInfoTextJavascipt}>{category}</p></div>
-                        <div className={classes.cardInfo}><TimerOutlinedIcon className={classes.cardInfoIcon}/> <p className={classes.cardInfoText}>{readduration} min read</p></div>
+                        <div className={classes.cardInfo}><TimerOutlinedIcon className={classes.cardInfoIcon}/> <p className={classes.cardInfoText}>{readduration} <span className={classes.minRead}>min read</span></p></div>
                     </div>
                     <p className={classes.cardP}>{smallbody}</p>
                     <a href={`blog/${_id}`} className={classes.cardLink}><p>Read More</p> <ChevronRightOutlinedIcon /></a>

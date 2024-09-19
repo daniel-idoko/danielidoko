@@ -6,16 +6,25 @@ const useStyles = makeStyles((theme) => {
       test: {
         background: "rgb(248, 249, 250)",
         padding: "4rem 1.5rem !important",
+
+        [theme.breakpoints.down('sm')]: {
+          padding: "2rem 1.5rem !important",
+        }
       },
       test2: {
         padding: "4rem 2.5rem !important",
         [theme.breakpoints.down('sm')]: {
-          padding: "2rem 1.5rem !important",
+          padding: "1rem 1rem !important",
+          paddingBottom: "2rem !important"
         }
       },
       root: {
         width: "100%",
         height: "100vh",
+
+        [theme.breakpoints.down('sm')]: {
+          height: "100%",
+        }
       },
       theParagraph: {
         fontFamily: "Lora, Arial, serif",
@@ -78,7 +87,7 @@ const useStyles = makeStyles((theme) => {
       },
       name: {
         fontFamily: "Lora, Arial, serif",
-        fontSize: "1.2rem",
+        fontSize: "1rem",
         fontWeight: "normal",
         fontStyle: "italic",
         lineHeight: "1.5",

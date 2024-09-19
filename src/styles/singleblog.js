@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => {
       },
       name: {
         fontFamily: "Lora, Arial, serif",
-        fontSize: "1.2rem",
+        fontSize: "1rem",
         fontWeight: "normal",
         fontStyle: "italic",
         lineHeight: "1.5",

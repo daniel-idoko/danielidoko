@@ -181,15 +181,16 @@ export default function BlogRightBar({
 
         {/* Search form start */}
         <section className={classes.disappearingSection} style={{padding: "0 1.5rem"}}>
-          <form action="#">
-            <label htmlFor="email" className={classes.label}>
+          <form>
+            <label htmlFor="text-2" className={classes.label}>
               <h5 className={classes.title}>Search your intentrest</h5>
             </label>
             <div className={classes.inputHolder}>
               <input
-                type="email"
-                name="email"
-                placeholder="Type a keyword and hit enter"
+                id="keyword-search-2"
+                type="text"
+                name="text-2"
+                placeholder="Type a keyword"
                 className={classes.input}
                 onChange={(e)=> searchFunction(e.target.value)}
               />

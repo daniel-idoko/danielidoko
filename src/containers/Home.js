@@ -11,6 +11,7 @@ import useStyles from "../styles/home";
 import BlogcardPreloader from "../components/BlogCardPreloader";
 import Blogcard from "../components/BlogCard";
 import { useGlobalContext } from "../context/AppContext";
+import Fuse from "fuse.js";
 
 function divideArrayIntoChunks(arr, chunkSize) {
   const result = [];
@@ -50,6 +51,10 @@ export default function HomeContainer({ DarkMode }) {
     const dividedArrays = divideArrayIntoChunks(Blogs, chunkSize);
     setDividedArrays(dividedArrays)
     setFilterStatus({isActive: false, filterOption: 0})
+
+    document.getElementById("keyword-search").value = ""
+    document.getElementById("keyword-search-2").value = ""
+    
   };
 
 
@@ -71,6 +76,22 @@ export default function HomeContainer({ DarkMode }) {
     setBlogIndex(0)
   }, [DiviedArrays]);
 
+  const options = {
+    keys: ['title', 'category', 'smallbody'],
+    threshold: 0.4, 
+  };
+  const searchFunction =(term)=>{
+    const fuse = new Fuse(Blogs, options)
+    setSearchTerm(term)
+    if(!term){
+      setFilterStatus({isActive: false, filterOption: ''})
+      setDividedArrays(divideArrayIntoChunks(Blogs, 5))
+    }else{
+      setFilterStatus({isActive: true, filterOption: 1})
+      const filterBlogArr = fuse.search(term)
+      setDividedArrays(divideArrayIntoChunks(filterBlogArr, 5))
+    }
+  };
 
   return (
     <Grid container className={classes.root}>
@@ -80,14 +101,15 @@ export default function HomeContainer({ DarkMode }) {
           <h5 className={classes.title} style={{margin: '0'}}>Daniel Idoko</h5>
         </div>
         <section className={classes.searchSection} style={{ padding: '0.5rem 0' }}>
-          <form action="#">
+          <form>
             <div className={classes.inputHolder}>
               <input
-                type="email"
-                name="email"
-                placeholder="Type a keyword and hit enter"
+                id="keyword-search"
+                type="text"
+                name="text"
+                placeholder="Type a keyword"
                 className={classes.input}
-                // onChange={(e)=> searchFunction(e.target.value)}
+                onChange={(e)=> searchFunction(e.target.value)}
               />
               <div className={classes.sendIcon}>
                 <SearchOutlinedIcon />
