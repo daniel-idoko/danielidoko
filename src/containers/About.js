@@ -23,7 +23,7 @@ export default function  AboutContainer({DarkMode}){
             <Grid item xs={12} md={6} className={classes.test}>
                 <h1 className={classes.h1Title}>Daniel Idoko - Software Developer</h1>
 
-                <p className={classes.theParagraph} style={{marginBottom: '3rem'}}>I'm Daniel Idoko, a passionate software developer based in Abuja, Nigeria. I've been it IT for since 2021. With a background in chemistry, I discovered my true calling in programming and have dedicated myself to mastering the craft.</p>
+                <p className={classes.theParagraph} style={{marginBottom: '3rem'}}>I'm Daniel Idoko, a passionate software developer based in Abuja, Nigeria. I've been in IT for since 2021. With a background in chemistry, I discovered my true calling in programming and have dedicated myself to mastering the craft.</p>
 
                 <h2 className={classes.h2Title}>My Skills</h2>
                 <ul className={classes.theParagraphUL} style={{paddingLeft: '5px', marginBottom: '3rem'}}>
