@@ -15,6 +15,18 @@ import "./css/dracula.css";
 
 
 const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      // Custom breakpoints
+      smm: 350,
+      sm: 600,
+      md: 960,
+      lg: 1280,
+      xl: 1920,
+      xxl: 2560,
+    },
+  },
   palette: {
     mode: 'light',
     primary:{
