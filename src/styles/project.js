@@ -159,8 +159,9 @@ const useStyles = makeStyles((theme) => {
         display: 'flex',
         marginTop: '1.8rem',
         textTransform: 'lowercase',
-        [theme.breakpoints.down('sm')]: {
-            display: 'grid',
+        [theme.breakpoints.down('smm')]: {
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
         }
       },
       
@@ -169,6 +170,7 @@ const useStyles = makeStyles((theme) => {
         display: 'flex',
         alignItems: 'center',
         marginRight: '1rem',
+        textDecoration: 'underline',
         color: ({ DarkMode })=>{
             if(DarkMode){
                 return "#e6e6e6"
