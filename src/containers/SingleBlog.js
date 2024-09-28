@@ -17,7 +17,7 @@ import { Watch } from "react-loader-spinner";
 export default function SingleBlogContainer({ item, DarkMode }) {
 
     const classes = useStyles({ DarkMode });
-    const { body, title} = item;
+    const { body, title, date, category, readduration} = item;
     const { setIsNavOpen } = useGlobalContext();
     const [message, setMessage] = useState('')
     const [loading, setLoading] = useState(false)
@@ -190,17 +190,17 @@ export default function SingleBlogContainer({ item, DarkMode }) {
 
                         <div className={classes.infoCard}>
                           <CalendarMonthIcon className={classes.icon}/>
-                          <div> <p>15 May, 2020</p> </div>
+                          <div> <p>{date}</p> </div>
                         </div>
 
                         <div className={classes.infoCard}>
                           <FolderOpenIcon className={classes.icon}/>
-                          <div> <p>Javascript</p> </div>
+                          <div> <p>{category}</p> </div>
                         </div>
 
                         <div className={classes.infoCard}>
                           <AccessAlarmIcon className={classes.icon}/>
-                          <div> <p>15 mins</p> </div>
+                          <div> <p>{readduration} mins</p> </div>
                         </div>
 
                       </div>
